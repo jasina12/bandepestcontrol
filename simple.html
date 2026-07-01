@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B&amp;E Pest Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="logo.png">
+<style>
+  :root{
+    --black:#111111;
+    --dark:#1a1a1a;
+    --red:#d9241a;
+    --white:#ffffff;
+    --gray:#9a9a9a;
+    --line:#2a2a2a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Poppins',sans-serif;
+    background:var(--black);
+    color:var(--white);
+    line-height:1.6;
+  }
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-weight:600;line-height:1.2;}
+
+  /* ---- Header ---- */
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 24px;max-width:1100px;margin:0 auto;
+  }
+  .logo{font-size:1.3rem;font-weight:700;}
+  .logo span{color:var(--red);}
+  nav a{margin-left:32px;font-size:0.95rem;color:var(--gray);}
+  nav a:hover{color:var(--white);}
+  .call-btn{
+    background:var(--red);color:var(--white);
+    padding:10px 20px;border-radius:6px;font-weight:600;font-size:0.9rem;
+  }
+
+  /* ---- Hero ---- */
+  .hero{
+    text-align:center;
+    padding:100px 24px 80px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero h1{
+    font-size:clamp(2.2rem,5vw,3.4rem);
+    max-width:700px;margin:0 auto 20px;
+  }
+  .hero h1 span{color:var(--red);}
+  .hero p{
+    color:var(--gray);max-width:520px;margin:0 auto 36px;font-size:1.05rem;
+  }
+  .btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--red);color:var(--white);
+    padding:14px 28px;border-radius:6px;font-weight:600;
+  }
+  .btn-outline{
+    border:1px solid var(--line);color:var(--white);
+    padding:14px 28px;border-radius:6px;font-weight:600;
+  }
+
+  /* ---- Services ---- */
+  .services{padding:80px 24px;border-bottom:1px solid var(--line);}
+  .section-title{text-align:center;margin-bottom:50px;}
+  .section-title h2{font-size:clamp(1.7rem,3.5vw,2.2rem);margin-bottom:10px;}
+  .section-title p{color:var(--gray);}
+  .service-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;
+  }
+  .service-card{
+    background:var(--dark);border:1px solid var(--line);border-radius:10px;
+    padding:32px 26px;text-align:left;
+  }
+  .service-card .icon{
+    width:44px;height:44px;border-radius:8px;background:rgba(217,36,26,0.15);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    color:var(--red);font-size:1.3rem;font-weight:700;
+  }
+  .service-card h3{font-size:1.15rem;margin-bottom:8px;}
+  .service-card p{color:var(--gray);font-size:0.92rem;}
+
+  /* ---- Why us ---- */
+  .why{padding:80px 24px;border-bottom:1px solid var(--line);}
+  .why-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1100px;margin:0 auto;
+    text-align:center;
+  }
+  .why-item .num{font-size:2.2rem;font-weight:700;color:var(--red);margin-bottom:8px;}
+  .why-item .label{color:var(--gray);font-size:0.9rem;}
+
+  /* ---- CTA ---- */
+  .cta{padding:90px 24px;text-align:center;}
+  .cta h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:16px;}
+  .cta p{color:var(--gray);max-width:460px;margin:0 auto 30px;}
+  .cta-form{
+    display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:460px;margin:0 auto;
+  }
+  .cta-form input{
+    flex:1;min-width:200px;padding:14px 16px;border-radius:6px;
+    border:1px solid var(--line);background:var(--dark);color:var(--white);font-family:inherit;
+  }
+  .cta-form input::placeholder{color:var(--gray);}
+  .cta-form button{
+    background:var(--red);color:var(--white);border:none;border-radius:6px;
+    padding:14px 24px;font-weight:600;font-family:inherit;cursor:pointer;
+  }
+
+  /* ---- Footer ---- */
+  footer{
+    border-top:1px solid var(--line);padding:32px 24px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+    max-width:1100px;margin:0 auto;font-size:0.85rem;color:var(--gray);
+  }
+  footer .logo{font-size:1rem;}
+
+  @media (max-width:800px){
+    nav{display:none;}
+    .service-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);row-gap:32px;}
+  }
+
+  .why-item {
+  background-color: #1F1918;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #460C01, #701705);
+    min-height: 100vh;
+}
+
+.logoimg img {
+    height: 60px;      /* Change size here */
+    width: auto;
+    display: block;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logoimg">
+        <a href="simple.html">
+            <img src="logo.png" alt="B&E Pest Control Logo">
+        </a>
+  </div>
+  <div class="logo">B<span>&amp;</span>E <span>Pest Control</span></div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="call-btn">Get a Quote</a>
+</header>
+
+<section class="hero">
+  <h1>No Pests. <span>No Worries.</span></h1>
+  <p>B&amp;E Pest Control handles ants, roaches, rodents, and termites for homes and businesses — fast, affordable, and backed by a re-treat guarantee.</p>
+  <div class="btn-group">
+    <a href="#contact" class="btn-primary">Get Inspection</a>
+    <a href="#services" class="btn-outline">Our Services</a>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-title">
+    <h2>What We Handle</h2>
+    <p>Licensed treatment for the most common pest problems.</p>
+  </div>
+  <div class="service-grid wrap">
+    <div class="service-card">
+      <div class="icon">A</div>
+      <h3>Ants &amp; Roaches</h3>
+      <p>Targeted treatment that clears colonies at the source, not just the surface.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">R</div>
+      <h3>Rodent Control</h3>
+      <p>Trapping, removal, and entry-point sealing so they don't come back.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">T</div>
+      <h3>Termite Protection</h3>
+      <p>Inspection and treatment plans that protect your property's structure.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">B</div>
+      <h3>Bed Bug Removal</h3>
+      <p>Discreet, thorough treatment for homes, hotels, and rentals.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">W</div>
+      <h3>Wasps &amp; Hornets</h3>
+      <p>Safe nest removal so your yard is usable again.</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">C</div>
+      <h3>Commercial Plans</h3>
+      <p>Recurring pest management for restaurants, offices, and retail.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="section-title">
+    <h2>Why B&amp;E</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <h2 style="color: #FA4425"style="color: #FA4425">Fast & Reliable Service</h2>
+      <p>Quick response when you need it most.</p>
+    </div>
+    <div class="why-item">
+      <h2 style="color: #FA4425">Eco-Friendly Solutions</h2>
+      <p>Effective protection with responsible methods.</p>
+    </div>
+    <div class="why-item">
+      <h2 style="color: #FA4425">Affordable Pricing</h2>
+      <p>Quality service at competitive rates.</p>
+    </div>
+    <div class="why-item">
+      <h2 style="color: #FA4425">Licensed Professionals</h2>
+      <p>Skilled technicians you can trust.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2>Ready to get started?</h2>
+  <p>Free, no-obligation inspection. Most requests get a same-day or next-day appointment.</p>
+  <a class="btn btn-primary" href="tel:+639662689433" role="button">Call Us</a>
+</section>
+
+<footer>
+  <div class="logo">B<span style="color:var(--red)">&amp;</span>E Pest Control</div>
+  <div>© 2023 B&amp;E Pest Control — Licensed &amp; Insured</div>
+</footer>
+
+</body>
+</html>
